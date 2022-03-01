@@ -40,7 +40,7 @@ $timeslots = array(
       <h1>Hello World!</h1>
       <h5 class="text">lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
       <div class="text-center">
-        <a href="#contact-form">
+        <a href="#contact-form" id="toContact">
           <button class="btn-default">contact us</button>
         </a>
       </div>
@@ -59,7 +59,7 @@ $timeslots = array(
       </div>
     </div>
     <div class="arrow text-center">
-      <a href="#tell-us">
+      <a href="#tell-us" id="downArrow">
         <img src="{{asset('images/triangle-yellow.svg')}}" alt="arrow down">
       </a>
     </div>
@@ -283,23 +283,84 @@ $timeslots = array(
         <small>We will send you a detailed report of your potential savings. Your information is safe with us - we will not send you spam.</small>
       </div>
     </div>
+    <form>
+      <div class="row m-top-2">
+        <div class="col">
+          <label class="xs-title" for="bofn">Business, Organization or Facility Name</label>
+          <input type="text" name="bofn" id="bofn" placeholder="" class="form-control" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <label class="xs-title" for="bofn">First Name</label>
+          <input type="text" name="firstname" id="firstname" placeholder="" class="form-control" required>
+        </div>
+        <div class="col-6">
+          <label class="xs-title" for="bofn">Last Name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <label class="xs-title" for="bofn">Email</label>
+          <input type="text" name="email" id="email" placeholder="" class="form-control" required>
+        </div>
+        <div class="col-6">
+          <label class="xs-title" for="bofn">Phone Number</label>
+          <input type="text" name="phone" id="phone" placeholder="" class="form-control" required>
+        </div>
+      </div>
+      <div class="row m-top-2">
+        <div class="col text-center">
+          <button class="btn-black">Calculate Your Savings</button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col text-center">
+        <a href="#banner" id="upArrow">
+          <img src="{{asset('images/triangle-yellow.svg')}}" alt="arrow up">
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-  $('a').click(function() {
+  $('#downArrow').click(function() {
     $('body,html').animate({
-      scrollTop: $('body').height()
+      scrollTop: $('#tell-us').offset().top
     }, 1600);
   });
- 
+
+  $('#toContact').click(function() {
+    $('body,html').animate({
+      scrollTop: $('#contact-form').offset().top
+    }, 1600);
+  });
+
   $(document).ready(function() {
     var winHeight = $(window).height();
     $('#banner').css('height', winHeight + "px");
     var bannerContent = $('#banner_content').height();
     bCHeight = (winHeight / 2) - (bannerContent / 2);
     $('#banner_content').css('margin-top', bCHeight + "px");
+  });
+  $('#upArrow').fadeOut();
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 1700) {
+      $('#upArrow').fadeIn();
+    } else {
+      $('#upArrow').fadeOut();
+    }
+  });
+  $('#upArrow').click(function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
   });
 </script>
 @endsection

@@ -525,8 +525,13 @@ h6, .h6 {
   font-family: 'Times New Roman', Times, serif;
 }
 
-#banner a, #banner a:hover {
+#banner a {
   color: #f08804;
+}
+
+#banner a:hover button {
+  color: #fff;
+  background-color: #f08804;
 }
 
 #banner .btn-default {
@@ -621,6 +626,52 @@ h6, .h6 {
   min-height: 21rem;
 }
 
+#contact-form {
+  padding-bottom: 5rem;
+}
+
+#contact-form .btn-black {
+  color: #fff;
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  font-size: .75rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid #fff;
+  border-radius: 32px;
+  background-color: #000;
+}
+
+#contact-form .col, #contact-form .col-6 {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+#contact-form button:hover {
+  color: #000;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+#contact-form #upArrow img {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+  position: fixed;
+  bottom: 15px;
+  height: 35px;
+  width: auto;
+}
+
 .m-top-2 {
   margin-top: 2rem;
 }
@@ -666,8 +717,8 @@ h6, .h6 {
 .col {
   float: left;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .col-form-2 {
@@ -762,6 +813,10 @@ fieldset legend {
   border-radius: .25rem;
 }
 
+.form-control:focus, .form-control:hover, .form-control:focus-visible {
+  border: 0.0625rem solid #f08804;
+}
+
 select:hover {
   cursor: pointer;
 }
@@ -782,6 +837,10 @@ select:hover {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+  }
+  .col {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .col-6 {
     float: left;

@@ -33,8 +33,8 @@
 .col{
   float: left;
   width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .col-form-2 {
   flex: 0 0 16.666667%;
@@ -103,6 +103,10 @@ fieldset {
   border: .0625rem solid $gray;
   border-radius: .25rem;
 }
+.form-control:focus, .form-control:hover, .form-control:focus-visible{
+  border: .0625rem solid $orange;
+}
+
 select:hover{
   cursor:pointer;
 }
@@ -118,6 +122,10 @@ select:hover{
   #home .container .row{
     display: flex;
     flex-direction: column-reverse;
+  }
+  .col{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .col-6{
     float: left;
