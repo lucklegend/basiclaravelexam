@@ -1,0 +1,143 @@
+.container {
+  padding-right: .9375rem;
+  padding-left: .9375rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+.text-center{
+  text-align: center!important;
+}
+#banner{
+  background-color: $violet-bg;
+  color:$orange;
+  font-family: 'Times New Roman', Times, serif;
+  a{
+    color:$orange;
+  }
+  a:hover button{
+    color:$white;
+    background-color: $orange;
+  }
+  .btn-default {
+    display: inline-block;
+    padding: .5rem 2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    border: 2px solid $orange;
+    border-radius: 32px;
+    background-color: transparent;
+    margin-top:3rem;
+  }
+
+  #banner_content{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+#home{
+  background-color: $orange;
+  color: $black;
+  h1{
+    font-family: 'Buenard', serif;
+    font-weight:900;
+    font-size: 3.5rem;
+  }
+  h5{
+    font-family: 'Buenard', serif;
+    font-weight: bolder;
+    line-height: 25px;
+  }
+  img{
+    border: 0.25rem solid $violet-bg;
+    border-radius: 3rem;
+    width: 100%;
+  }
+  a img{
+    border:none;
+    height: 2rem;
+    width: auto;
+  }
+  div.row{
+    padding-bottom: 3rem;
+  }
+  .arrow{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#tell-us{
+  padding:5rem 0;
+  .col-6{
+    padding-left: 0.5rem!important;
+    padding-right: 0.5rem!important;
+  }
+}
+.title{
+  color: $sky-blue;
+  font-weight: bold;
+}
+#devices{
+  padding-bottom:5rem;
+  .col-6{
+    padding-left: 0.5rem!important;
+    padding-right: 0.5rem!important;
+  }
+  fieldset{
+    min-height: 21rem;
+  }
+}
+#contact-form{
+  padding-bottom: 5rem;
+  .btn-black {
+    color: $white;
+    display: inline-block;
+    padding: .75rem 1.5rem;
+    font-size: .75rem;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    border: 2px solid $white;
+    border-radius: 32px;
+    background-color: $black;
+  }
+  .col, .col-6{
+    padding-left: 0.5rem!important;
+    padding-right: 0.5rem!important;
+  }
+  button:hover{
+    color:$black;
+    border: 2px solid $black;
+    background-color: $white;
+  }
+  #upArrow img{
+    transform: scaleY(-1);
+    position: fixed;
+    bottom: 15px;
+    height: 35px;
+    width: auto;
+  }
+}
