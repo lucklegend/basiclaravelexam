@@ -100,24 +100,37 @@ class UserController extends Controller
      */
     public function getDownline($id)
     {
-        $user = User::where('sponsor_id', $id)
-            ->get();
-        $data= array();
-        $count = count($user);
-        // echo $count;
-        // var_dump($user);
-        // die();
-        if(!(int)$id){
-            $data['error'] = 'User ID is NOT Valid';
-        }else if (count($user) == "0" || $user == NULL) {
-            $data['error'] = 'User Not Found/No Downline';
-        }else if($user){
-            $data['user'] = $user;
+        $user = User::find($id);
+        $data = array();
+        if($user){  
+            if($user['sponsor_id'] == 0 ){
+                $downline = User::all();
+                // array_push($data, $downline);
+                $data['user'] = $downline;
+            }else{
+                $newDownline = array();
+                array_push($newDownline, $user);
+                $downline = User::where('sponsor_id', $id)
+                    ->get();
+                if (count($downline) != 0) {
+                    foreach($downline as $line){
+                        array_push($newDownline, $line);
+                    }
+                }
+                $data['user'] = $newDownline;
+            }
+            
         }else{
-            $data['error'] = 'User Not Found/No Downline';
+            if (!(int)$id) {
+                $data['error'] = 'User ID is NOT Valid';
+            } else {
+                $data['error'] = 'User Not Found';
+            }
         }
+        
         return response()->json(['data'=>$data], 200);
     }
+
     function exer1(){
         return view('user.exer1');
     }
